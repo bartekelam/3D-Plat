@@ -62,6 +62,6 @@ public class CharacterController : MonoBehaviour
 
         camRotation = camRotation - Input.GetAxis("Mouse Y") * camRotationSpeed;
         camRotation = Mathf.Clamp(camRotation, -10.0f, 30.0f);
-        cam.transform.localRotation = Quaternion.Euler(new Vector3(camRotation, 0.0f, 0.0f));
+        cam.transform.localRotation = Quaternion.Euler(new Vector3(camRotation, 90.0f, 0.0f));
     }
 }
