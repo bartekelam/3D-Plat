@@ -32,6 +32,12 @@ public class CharacterController : MonoBehaviour
     public LayerMask groundLayer;
     public float jumpForce = 300.0f;
 
+    public AudioClip jump;
+    public AudioClip backgroundMusic;
+
+    public AudioSource sfxPlayer;
+    public AudioSource musicPlayer;
+
     void Update()
     {
         isOnGround = Physics.CheckSphere(groundChecker.transform.position, 0.1f, groundLayer);
@@ -62,6 +68,6 @@ public class CharacterController : MonoBehaviour
 
         camRotation = camRotation - Input.GetAxis("Mouse Y") * camRotationSpeed;
         camRotation = Mathf.Clamp(camRotation, -10.0f, 30.0f);
-        cam.transform.localRotation = Quaternion.Euler(new Vector3(camRotation, 90.0f, 0.0f));
+        cam.transform.localRotation = Quaternion.Euler(new Vector3(camRotation, 0.0f, 0.0f));
     }
 }
